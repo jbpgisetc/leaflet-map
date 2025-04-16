@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Leaflet Map with RDOF Overlay</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Leaflet CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+  <!-- Leaflet Draw CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.draw/1.0.4/leaflet.draw.css" />
+  <!-- Polyline Measure CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet.polylinemeasure/Leaflet.PolylineMeasure.css" />
+  <!-- GeoSearch CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet-geosearch@3.11.0/dist/geosearch.css" />
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Sidebar -->
+  <div id="sidebar">
+    <button id="sidebar-toggle">☰</button>
+    <div id="layer-controls">
+      <label class="legend-header">
+        <input type="checkbox" id="toggle-eligible" checked>
+        <img src="icons/home.svg" class="legend-icon dark">
+        <strong>Eligible Locations</strong>
+      </label>
+      <div class="sublayers">
+        <label class="legend-item">
+          <input type="checkbox" id="toggle-unserved" checked>
+          <img src="icons/home.svg" class="legend-icon green">
+          Unserved (<span id="count-unserved">0</span>)
+        </label>
+        <label class="legend-item">
+          <input type="checkbox" id="toggle-underserved" checked>
+          <img src="icons/home.svg" class="legend-icon yellow">
+          Underserved (<span id="count-underserved">0</span>)
+        </label>
+        <label class="legend-item">
+          <input type="checkbox" id="toggle-other" checked>
+          <img src="icons/home.svg" class="legend-icon gray">
+          Other (<span id="count-other">0</span>)
+        </label>
+      </div>
+
+      <hr />
+      <strong>🗺️ Basemap</strong>
+      <div class="sublayers basemap-toggle">
+        <label><input type="radio" name="basemap" value="osm" checked> Street Map</label>
+        <label><input type="radio" name="basemap" value="satellite"> Satellite Hybrid</label>
+      </div>
+
+      <hr />
+      <strong>🟠 Overlays</strong>
+      <div class="sublayers">
+        <label class="legend-item">
+          <input type="checkbox" id="toggle-rdof" checked>
+          RDOF Texas Areas
+        </label>
+      </div>
+    </div>
+  </div>
+
+  <!-- Map Container -->
+  <div id="map"></div>
+
+  <!-- Leaflet JS -->
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+  <!-- Leaflet Draw JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.draw/1.0.4/leaflet.draw.js"></script>
+  <!-- PapaParse for CSV parsing -->
+  <script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js"></script>
+  <!-- Leaflet PIP -->
+  <script src="https://unpkg.com/leaflet-pip@latest/leaflet-pip.min.js"></script>
+  <!-- Esri Leaflet -->
+  <script src="https://unpkg.com/esri-leaflet@3.0.7/dist/esri-leaflet.js"></script>
+  <!-- Polyline Measure JS -->
+  <script src="https://unpkg.com/leaflet.polylinemeasure/Leaflet.PolylineMeasure.js"></script>
+  <!-- GeoSearch JS -->
+  <script src="https://unpkg.com/leaflet-geosearch@3.11.0/dist/bundle.min.js"></script>
+  <!-- Custom Script -->
+  <script src="script.js"></script>
+
+</body>
+</html>

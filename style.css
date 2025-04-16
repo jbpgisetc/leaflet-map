@@ -1,0 +1,132 @@
+/* Base styles */
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: system-ui, sans-serif;
+}
+
+/* Fullscreen map */
+#map {
+  height: 100vh;
+  width: 100%;
+}
+
+/* Sidebar panel */
+#sidebar {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  background: rgba(255, 255, 255, 0.96);
+  padding: 14px 16px;
+  border-radius: 0 10px 10px 0;
+  box-shadow: 2px 2px 8px rgba(0,0,0,0.2);
+  z-index: 1000;
+  width: 250px;
+  transition: transform 0.3s ease;
+}
+
+/* Hide sidebar */
+#sidebar.collapsed {
+  transform: translate(-100%, -50%);
+}
+
+/* Sidebar toggle button */
+#sidebar-toggle {
+  position: absolute;
+  top: 12px;
+  right: -38px;
+  background: #007bff;
+  color: white;
+  border: none;
+  border-radius: 0 5px 5px 0;
+  width: 32px;
+  height: 32px;
+  font-size: 18px;
+  line-height: 32px;
+  box-shadow: 1px 1px 5px rgba(0,0,0,0.2);
+  cursor: pointer;
+}
+
+/* Layer group headers and items */
+#layer-controls {
+  margin-top: 40px;
+  font-size: 14px;
+}
+
+.legend-header,
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 10px;
+}
+
+.legend-header strong {
+  font-size: 15px;
+}
+
+/* Legend icon styling */
+.legend-icon {
+  width: 18px;
+  height: 18px;
+  filter: grayscale(1);
+}
+
+.legend-icon.green {
+  filter: invert(41%) sepia(84%) saturate(420%) hue-rotate(88deg) brightness(93%) contrast(95%);
+}
+
+.legend-icon.yellow {
+  filter: invert(79%) sepia(50%) saturate(625%) hue-rotate(4deg) brightness(105%) contrast(98%);
+}
+
+.legend-icon.gray {
+  filter: invert(30%) sepia(6%) saturate(0%) hue-rotate(320deg) brightness(95%) contrast(92%);
+}
+
+.legend-icon.dark {
+  filter: invert(17%);
+}
+
+/* Indented sublayer list */
+.sublayers {
+  margin-left: 14px;
+  padding-left: 8px;
+  border-left: 2px solid #ddd;
+}
+
+/* Horizontal dividers */
+hr {
+  border: none;
+  border-top: 1px solid #ccc;
+  margin: 12px 0;
+}
+
+/* Stacked basemap options */
+.basemap-toggle label {
+  display: block;
+  margin: 6px 0;
+}
+
+/* Clean popups */
+.leaflet-popup-content {
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+/* Ruler tool placement */
+.leaflet-control.polyline-measure-control {
+  margin-top: 6px;
+}
+
+/* GeoSearch visibility */
+.leaflet-control-geosearch {
+  z-index: 10000 !important;
+}
+
+/* Optional: space out multiple controls on the left */
+.leaflet-control-container .leaflet-top.leaflet-left > * + * {
+  margin-top: 6px;
+}
